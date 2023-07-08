@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  worker-application:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile
+    container_name: go-fiber-clean
+    volumes:
+      - ./source:/opt/app/api/fiber
+    ports:
+      - "3000:3000"
